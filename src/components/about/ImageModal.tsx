@@ -1,41 +1,33 @@
 import Image, { StaticImageData } from "next/image";
+import Modal from "../Portal";
 
 interface IModal {
   alt: string;
   src: StaticImageData;
-  modal: boolean;
+  mounted: boolean;
   setOpenModal: (arg0: boolean) => void;
 }
-const ImageModal = ({ alt, src, modal, setOpenModal }: IModal) => {
+const ImageModal = ({ alt, src, mounted, setOpenModal }: IModal) => {
   const handleClose = () => {
     setOpenModal(false);
   };
   return (
-    <>
-      {modal ? (
-        <div
-          className="absolute z-50 w-full  bg-gray-200"
-          id="modal-overlay"
+    <Modal mounted={mounted}>
+      <div className="flex relative">
+        <Image
+          alt={alt}
+          width={800}
+          className="rounded relative"
+          src={src}
+        />
+        <span
+          className="absolute top-0 right-0 mr-4 mt-2 cursor-pointer text-red-600 font-extrabold hover:scale-110 "
+          onClick={handleClose}
         >
-          <div className="flex h-screen w-full items-center justify-center  p-6 ">
-            <Image
-              alt={alt}
-              width={800}
-              className="rounded "
-              src={src}
-            />
-            <span
-              className="absolute top-0 right-0 mr-4 cursor-pointer text-red-600"
-              onClick={handleClose}
-            >
-              X
-            </span>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
-    </>
+          X
+        </span>
+      </div>
+    </Modal>
   );
 };
 

@@ -11,10 +11,10 @@ const imgCourse = [
 
 const AboutSection = () => {
   return (
-    <section>
-      <p>cine Sunt</p>
+    <section className="flex flex-col text-center gap-36">
+      <span className="text-3xl">Courses</span>
       <div
-        className=" relative grid grid-cols-3 p-6"
+        className=" relative grid grid-cols-3 p-6 gap-6"
         id="certificari"
       >
         {imgCourse.map(({ alt, src }, index) => (

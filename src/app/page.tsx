@@ -5,7 +5,7 @@ import ProiecteSection from "@/components/projects/section";
 
 export default function Home() {
   return (
-    <div className="grid  min-h-screen grid-cols-1 relative">
+    <div className="grid  min-h-screen grid-cols-1 relative gap-96">
       <SectionBackground className="">
         <HeroSection />
       </SectionBackground>

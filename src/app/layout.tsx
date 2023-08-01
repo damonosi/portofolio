@@ -19,8 +19,10 @@ export default function RootLayout({
           <Header />
 
           <main className="grid grid-cols-1 px-24">{children}</main>
+
           <Footer />
         </Providers>
+        <div id="portal" />
       </body>
     </html>
   );

@@ -18,8 +18,8 @@ const Header = () => {
       <motion.header
         className={`transition-all duration-700 flex justify-between  sticky top-0 dark:bg-black items-center px-24 backdrop-blur-lg w-full h-20 z-40  text-[#f4e6e6] ${
           scrollDirection === "down"
-            ? "-translate-y-full scale-90 "
-            : "-translate-y-0 scale-100"
+            ? "-translate-y-full scale-90 opacity-0"
+            : "-translate-y-0 scale-100 opacity-100"
         } `}
       >
         <div
