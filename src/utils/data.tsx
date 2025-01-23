@@ -21,7 +21,7 @@ export interface Proiect {
   github: string;
   limbaj: string;
   technologii: Array<Technologie>;
-  imaginePreview: string;
+  imaginePreview?: string;
   descriere: string;
 }
 
@@ -29,61 +29,77 @@ const getProjectsData = () => {
   const proiecte: Proiect[] = [
     {
       id: 1,
-      numeProiect: "Arena Residence",
+      numeProiect: "Human Source",
       limbaj: javascriptIconLink,
       technologii: [
+        { link: nextjsIconLink, nume: "nextjs" },
         { link: reactIconLink, nume: "react" },
-        { link: lottieIconLink, nume: "lottie" }
+        { link: lottieIconLink, nume: "lottie" },
       ],
       github: "https://github.com/damonosi/ArenaResidence",
       imaginePreview:
         "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
       descriere:
-        "Am facut un site de prezentare pentru o companie care vinde apartamente. Situl este facut cu React. sectiunea de selectat etajul si apartamentul sunt facute folosind KonvaJs"
+        "This is a website made for a company that connects workes with employers.",
     },
     {
       id: 2,
+      numeProiect: "Arena Residence",
+      limbaj: javascriptIconLink,
+      technologii: [
+        { link: reactIconLink, nume: "react" },
+        { link: lottieIconLink, nume: "lottie" },
+      ],
+      github: "https://github.com/damonosi/ArenaResidence",
+      imaginePreview:
+        "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
+      descriere:
+        "This is a website I made for a company that sells apartments from the buildings they make",
+    },
+    {
+      id: 3,
       numeProiect: "UrsitoareBc",
       limbaj: javascriptIconLink,
       technologii: [
         { link: nextjsIconLink, nume: "nextjs" },
         { link: reactIconLink, nume: "react" },
-        { link: mongodbIconLink, nume: "mongodb" }
+        { link: mongodbIconLink, nume: "mongodb" },
       ],
       github: "https://github.com/damonosi/ursitoare",
       descriere:
-        "Este o aplicatie care ajuta firma de ursitoare sa isi managerieze rezervarile,sa isi aranjeze traseul. Pe partea de client, clientul poate face programari noi,are un formular de completat pentru a ajuta la preluarea mai usoara de date pentru realizarea spectacolelor.Implementat login si auth.Admin/client siguranta path,stocare date in MongoDbAtlas",
+        "This is a web app that I made for a company so that they can organise their bookings using Google api",
       imaginePreview:
-        "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg"
+        "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
     },
     {
-      id: 3,
+      id: 4,
       numeProiect: "RoseDimat",
       limbaj: javascriptIconLink,
       technologii: [
         { link: nextjsIconLink, nume: "nextjs" },
         { link: reactIconLink, nume: "react" },
-        { link: mongodbIconLink, nume: "mongodb" }
+        { link: mongodbIconLink, nume: "mongodb" },
       ],
       github: "https://github.com/damonosi/magazin_rose",
-      descriere: "Ce am facut in proiect",
+      descriere:
+        "This is a website I made for a company that sells rose products that the make",
       imaginePreview:
-        "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg"
+        "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
     },
     {
-      id: 4,
+      id: 5,
       numeProiect: "Portofoliu",
       limbaj: typescriptIconLink,
       technologii: [
         { link: nextjsIconLink, nume: "nextjs" },
         { link: reactIconLink, nume: "react" },
-        { link: mongodbIconLink, nume: "mongodb" }
+        { link: mongodbIconLink, nume: "mongodb" },
       ],
       github: "https://github.com/damonosi/magazin_rose",
-      descriere: "Ce am facut in proiect",
+      descriere: "This is my portofolio website",
       imaginePreview:
-        "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg"
-    }
+        "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
+    },
   ];
   return proiecte;
 };

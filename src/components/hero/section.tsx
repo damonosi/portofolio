@@ -24,14 +24,14 @@ const HeroSection = () => {
   };
   return (
     <section
-      className="relative items-center justify-center overflow-hidden flex min-h-[calc(100vh-80px)]  w-full  gap-2 py-6  "
+      className="relative items-start md:items-center md:justify-center   flex mt-[80px] md:mt-0 min-h-[calc(100vh-80px)] py-16 md:py-6 w-full  "
       id="hero-section"
     >
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex flex-col text-center  gap-20 font-bold  text-2xl justify-center"
+        className="flex flex-col text-center h-hull gap-20 font-bold  text-2xl justify-center"
       >
         <motion.h2
           className="text-6xl "

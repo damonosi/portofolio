@@ -10,10 +10,10 @@ const imgCourse = [
 
 const AboutSection = () => {
   return (
-    <section className="flex flex-col text-center gap-36">
-      <span className="text-3xl">Udemy Courses</span>
+    <section className="flex flex-col text-center gap-36 min-h-[calc(100vh-80px)] py-12">
+      <span className="text-3xl py-12">Udemy Courses</span>
       <div
-        className=" relative grid grid-cols-3 p-6 gap-6 h-[10vh]"
+        className=" relative grid grid-cols-1 md:grid-cols-3 p-6 gap-6 "
         id="certification"
       >
         {imgCourse.map(({ alt, src, delay }, index) => (

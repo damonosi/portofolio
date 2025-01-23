@@ -1,98 +1,8 @@
 "use client";
 import InViewWrapper from "@/utils/InViewWrapper";
 import getProjectsData, { Proiect } from "@/utils/data";
-import Image from "next/image";
-import { useState } from "react";
-import { AiFillGithub } from "react-icons/ai";
+import ProjectCard from "./ProjectCard";
 
-type GitHubToolbar = {
-  github: string;
-};
-type TechnologiiComponent = {
-  link: string;
-  nume: string;
-};
-
-const TechnologiiComponent: React.FunctionComponent<TechnologiiComponent> = ({
-  link,
-  nume,
-}) => {
-  const [seeToolbar, setSeeToolbar] = useState(false);
-  const handleOnMouseEnter = () => {
-    setSeeToolbar(true);
-  };
-  const handleOnMouseLeave = () => {
-    setSeeToolbar(false);
-  };
-
-  return (
-    <div
-      className="relative flex w-full cursor-help items-center  justify-center "
-      id="technologie-toolbar"
-    >
-      <div
-        className="flex h-16 w-16  items-center justify-center p-1  ring-4"
-        onMouseEnter={handleOnMouseEnter}
-        onMouseLeave={handleOnMouseLeave}
-      >
-        <Image
-          width={48}
-          height={48}
-          src={link}
-          alt="img-technologii"
-        />
-      </div>
-
-      <div
-        className={
-          seeToolbar
-            ? "  absolute right-1/2 bottom-0 h-auto translate-x-1/2 translate-y-full transform items-center justify-center rounded bg-black p-2 text-center text-white ring-4"
-            : "hidden"
-        }
-      >
-        <p className="text-xs">{nume}</p>
-      </div>
-    </div>
-  );
-};
-
-const GithubWithToolbar: React.FunctionComponent<GitHubToolbar> = ({
-  github,
-}) => {
-  const [seeToolbar, setSeeToolbar] = useState(false);
-  const handleOnMouseEnter = () => {
-    setSeeToolbar(true);
-  };
-  const handleOnMouseLeave = () => {
-    setSeeToolbar(false);
-  };
-
-  return (
-    <div className="relative flex w-1/3 items-center justify-center">
-      <a
-        href={github}
-        target="_blank"
-        className="relative"
-        rel="noopener noreferrer"
-        onMouseEnter={handleOnMouseEnter}
-        onMouseLeave={handleOnMouseLeave}
-      >
-        <span>
-          <AiFillGithub size={seeToolbar ? "2em" : "1.5em"} />
-        </span>{" "}
-        <div
-          className={
-            seeToolbar
-              ? "absolute mt-4 flex h-auto w-16 items-center justify-center rounded bg-black p-2 text-center text-white ring-4"
-              : "hidden"
-          }
-        >
-          <p className="text-xs">open github in a new tab</p>
-        </div>
-      </a>
-    </div>
-  );
-};
 const animations = {
   inView: {
     opacity: 1,
@@ -110,10 +20,10 @@ const ProiecteSection = () => {
   const proiecte: Proiect[] = getProjectsData();
 
   return (
-    <section className=" flex flex-col gap-6 p-6">
-      <h1>Proiectele Mele</h1>{" "}
+    <section className=" flex flex-col text-center gap-6 p-6 py-12">
+      <h1 className="text-5xl py-12">Some of the projects I have made</h1>{" "}
       <div
-        className="flex flex-col content-center items-center justify-center gap-16 "
+        className="grid grid-cols-1 md:grid-cols-2  justify-center  "
         id="work"
       >
         {proiecte.map(
@@ -123,44 +33,16 @@ const ProiecteSection = () => {
               inView={animations.inView}
               notInView={animations.notInView}
               tranzitie={animations.tranzitie}
-              className="m-2  flex  w-1/2 flex-col  justify-center border-2 p-6 text-left ring-2 "
+              className="m-2  flex   flex-col  justify-center border-2 p-6 text-left ring-2 "
             >
-              <h1>{numeProiect}</h1>
-              <hr className="mt-2 h-1 w-1/4 bg-black" />
-              <div className="min-h-[100px] w-full border-b-2 border-black pt-4 text-left ">
-                <p>{descriere}</p>
-              </div>
-              <div
-                className="flex w-full items-center   justify-between p-6"
-                key={id}
-                id={id.toString()}
-              >
-                <div
-                  className="w-1/3"
-                  id="limbaj-folosit"
-                >
-                  <Image
-                    width={48}
-                    height={48}
-                    alt="javascript"
-                    src={limbaj}
-                  />
-                </div>
-                <div
-                  className="flex w-1/3 items-center justify-between"
-                  id="sectiune-technologii"
-                >
-                  {technologii.map(({ link, nume }) => (
-                    <TechnologiiComponent
-                      key={nume}
-                      link={link}
-                      nume={nume}
-                    />
-                  ))}
-                </div>
-
-                <GithubWithToolbar github={github} />
-              </div>
+              <ProjectCard
+                id={id}
+                limbaj={limbaj}
+                technologii={technologii}
+                numeProiect={numeProiect}
+                github={github}
+                descriere={descriere}
+              />
             </InViewWrapper>
           ),
         )}
