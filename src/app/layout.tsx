@@ -27,7 +27,7 @@ export default function RootLayout({
           <Providers>
             <Header />
 
-            <main className="grid grid-cols-1 px-24">{children}</main>
+            <main className="grid grid-cols-1 px-5 md:px-24">{children}</main>
 
             <Footer />
           </Providers>

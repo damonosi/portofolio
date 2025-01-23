@@ -7,7 +7,7 @@ type IChildren = {
 const SectionBackground = ({ children, className }: IChildren) => {
   return (
     <div
-      className={` ${className}  flex items-center justify-center px-6`}
+      className={` ${className}  flex w-full items-center justify-center  md:px-6`}
       id="background"
     >
       {children}
