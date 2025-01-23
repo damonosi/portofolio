@@ -3,9 +3,12 @@ import { Proiect } from "@/utils/data";
 import Image from "next/image";
 import { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
-
+import { FaExternalLinkAlt } from "react-icons/fa";
 type GitHubToolbar = {
   github: string;
+};
+type LiveLink = {
+  liveLink?: string;
 };
 type TechnologiiComponent = {
   link: string;
@@ -91,6 +94,43 @@ const GithubWithToolbar: React.FunctionComponent<GitHubToolbar> = ({
     </div>
   );
 };
+const LivePreviewWithToolbar: React.FunctionComponent<LiveLink> = ({
+  liveLink,
+}) => {
+  const [seeToolbar, setSeeToolbar] = useState(false);
+  const handleOnMouseEnter = () => {
+    setSeeToolbar(true);
+  };
+  const handleOnMouseLeave = () => {
+    setSeeToolbar(false);
+  };
+
+  return (
+    <div className="relative flex w-1/3 items-center justify-center">
+      <a
+        href={liveLink}
+        target="_blank"
+        className="relative"
+        rel="noopener noreferrer"
+        onMouseEnter={handleOnMouseEnter}
+        onMouseLeave={handleOnMouseLeave}
+      >
+        <span>
+          <FaExternalLinkAlt size={seeToolbar ? "2em" : "1.5em"} />
+        </span>{" "}
+        <div
+          className={
+            seeToolbar
+              ? "absolute mt-4 flex h-auto w-16 items-center justify-center rounded bg-black p-2 text-center text-white ring-4"
+              : "hidden"
+          }
+        >
+          <p className="text-xs">open to see live website</p>
+        </div>
+      </a>
+    </div>
+  );
+};
 
 const ProjectCard = ({
   numeProiect,
@@ -99,7 +139,9 @@ const ProjectCard = ({
   limbaj,
   technologii,
   github,
+  liveLink,
 }: Proiect) => {
+  console.log(liveLink);
   return (
     <div>
       <h1 className="text-2xl">{numeProiect}</h1>
@@ -135,9 +177,8 @@ const ProjectCard = ({
             />
           ))}
         </div>
-
         <GithubWithToolbar github={github} />
-        <span>see live</span>
+        {liveLink && <LivePreviewWithToolbar liveLink={liveLink} />}
       </div>
     </div>
   );

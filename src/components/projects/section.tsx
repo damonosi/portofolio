@@ -27,7 +27,15 @@ const ProiecteSection = () => {
         id="work"
       >
         {proiecte.map(
-          ({ id, limbaj, technologii, numeProiect, github, descriere }) => (
+          ({
+            id,
+            limbaj,
+            technologii,
+            numeProiect,
+            github,
+            descriere,
+            liveLink,
+          }) => (
             <InViewWrapper
               key={id}
               inView={animations.inView}
@@ -40,6 +48,7 @@ const ProiecteSection = () => {
                 limbaj={limbaj}
                 technologii={technologii}
                 numeProiect={numeProiect}
+                liveLink={liveLink}
                 github={github}
                 descriere={descriere}
               />

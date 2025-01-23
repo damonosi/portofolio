@@ -23,6 +23,7 @@ export interface Proiect {
   technologii: Array<Technologie>;
   imaginePreview?: string;
   descriere: string;
+  liveLink?: string;
 }
 
 const getProjectsData = () => {
@@ -41,6 +42,7 @@ const getProjectsData = () => {
         "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
       descriere:
         "This is a website made for a company that connects workes with employers.",
+      liveLink: "https://humansource.vercel.app/",
     },
     {
       id: 2,
