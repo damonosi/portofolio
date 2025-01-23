@@ -112,7 +112,10 @@ const ProiecteSection = () => {
   return (
     <section className=" flex flex-col gap-6 p-6">
       <h1>Proiectele Mele</h1>{" "}
-      <div className="flex flex-col content-center items-center justify-center gap-16 ">
+      <div
+        className="flex flex-col content-center items-center justify-center gap-16 "
+        id="work"
+      >
         {proiecte.map(
           ({ id, limbaj, technologii, numeProiect, github, descriere }) => (
             <InViewWrapper

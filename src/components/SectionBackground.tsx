@@ -1,6 +1,7 @@
 type IChildren = {
   children: React.ReactNode;
   className?: React.ReactNode;
+
 };
 
 const SectionBackground = ({ children, className }: IChildren) => {

@@ -1,15 +1,18 @@
+"use client";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
   const [seeToolbar, setSeeToolbar] = useState(false);
+
   const handleOnMouseEnter = () => {
     setSeeToolbar(true);
   };
   const handleOnMouseLeave = () => {
     setSeeToolbar(false);
   };
+
   return (
     <label className="relative inline-flex cursor-pointer items-center">
       <input
@@ -28,11 +31,11 @@ const ThemeSwitcher = () => {
       <span
         className={
           seeToolbar
-            ? "  absolute right-1/2 -bottom-full h-auto translate-x-1/2 translate-y-full transform items-center justify-center rounded bg-black p-2 text-center text-white ring-4"
+            ? "  absolute right-1/2 -bottom-full h-auto translate-x-1/2 translate-y-full transform items-center z-50 justify-center rounded  p-2 text-center text-white ring-4"
             : "hidden"
         }
       >
-        select theme
+        {theme === "dark" ? "dark" : "light"}
       </span>
     </label>
   );
