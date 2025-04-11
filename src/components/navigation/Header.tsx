@@ -11,14 +11,30 @@ import ScrollProgress from "./ScrollProgress";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 const Navigation = () => {
+  const [opened, setOpended] = useState(false);
+
+  function handleOpenTheme() {
+    setOpended(!opened);
+  }
   return (
     <div className=" justify-center items-center gap-5 hidden md:flex">
-      <nav className="flex gap-6  justify-center items-center">
+      <nav className="flex gap-6 text-dark justify-center items-center">
         <Link href="#hero-section">About</Link>
         <Link href="#certification">Studies</Link>
         <Link href="#work">Projects</Link>
+        <div className={`flex relative h-fit w-full ${opened && "border"} `}>
+          <button onClick={handleOpenTheme}>Select Theme</button>
+          {opened ? (
+            <div className="absolute gap-2  flex top-0 right-1/2 transform translate-y-full items-center translate-x-1/2">
+              <span className="text-lg">light</span>
+              <ThemeSwitcher />
+              <span className="text-lg">dark</span>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </nav>
-      <ThemeSwitcher />
     </div>
   );
 };
@@ -32,7 +48,7 @@ const MobileMenu = () => {
       />
       {openedMenu && (
         <div className="absolute bottom-0 w-full left-0  right-0  justify-center items-center gap-5 top-full">
-          <nav className="flex gap-6  shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] backdrop-blur-3xl justify-between px-5 py-5 items-center">
+          <nav className="flex gap-6  shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f]  backdrop-blur-3xl justify-between px-5 py-5 items-center">
             <Link href="#hero-section">About</Link>
             <Link href="#certification">Studies</Link>
             <Link href="#work">Projects</Link>

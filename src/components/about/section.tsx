@@ -11,7 +11,7 @@ const imgCourse = [
 const AboutSection = () => {
   return (
     <section className="flex flex-col text-center gap-36 min-h-[calc(100vh-80px)] py-12">
-      <span className="text-3xl py-12">Udemy Courses</span>
+      <span className="text-3xl py-12">Courses</span>
       <div
         className=" relative grid grid-cols-1 md:grid-cols-3 p-6 gap-6 "
         id="certification"
