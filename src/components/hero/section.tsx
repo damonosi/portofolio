@@ -8,7 +8,7 @@ const HeroSection = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.6,
+        staggerChildren: 0.8,
       },
     },
   };
@@ -19,7 +19,7 @@ const HeroSection = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 1.5,
+        duration: 2,
       },
     },
   };
@@ -40,8 +40,8 @@ const HeroSection = () => {
             variants={item}
           >
             Hell<span className="text-7xl">[o]</span>
+            <hr className="w-1/3 h-2 bg-portocaliu border-portocaliu" />
           </motion.h2>
-          <hr className="w-1/3 h-2 bg-portocaliu border-portocaliu" />
         </div>
         <div>
           {" "}
@@ -50,15 +50,15 @@ const HeroSection = () => {
             variants={item}
           >
             My name is Andrei ,
+            <hr className="w-80 h-2 bg-portocaliu border-portocaliu" />
           </motion.h1>{" "}
-          <hr className="w-80 h-2 bg-portocaliu border-portocaliu" />
         </div>
         <motion.span
-          className="text-end  w-fit  ml-auto"
+          className="text-end   w-fit  ml-auto leading-loose"
           variants={item}
         >
-          I am a web developer that is specialised <br /> in front-end web
-          development
+          I am a passionate web developer that <br /> is specialised in
+          front-end web development
           <hr className="w-full h-2 bg-portocaliu border-portocaliu mt-2" />
         </motion.span>
       </motion.div>

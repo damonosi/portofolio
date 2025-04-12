@@ -1,8 +1,8 @@
+"use client";
 import SectionBackground from "@/components/SectionBackground";
 import AboutSection from "@/components/about/section";
 import HeroSection from "@/components/hero/section";
 import ProiecteSection from "@/components/projects/section";
-
 
 const HorizontalLine = () => {
   return <hr className="w-64 h-1 border-portocaliu bg-portocaliu my-15" />;
