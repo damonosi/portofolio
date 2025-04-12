@@ -1,44 +1,47 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useState } from "react";
-
+import { IoSunny } from "react-icons/io5";
+import { MdNightsStay } from "react-icons/md";
 const ThemeSwitcher = () => {
+  const [opened, setOpended] = useState(false);
   const { theme, setTheme } = useTheme();
-  const [seeToolbar, setSeeToolbar] = useState(false);
 
-  const handleOnMouseEnter = () => {
-    setSeeToolbar(true);
-  };
-  const handleOnMouseLeave = () => {
-    setSeeToolbar(false);
-  };
+  function handleSetTheme() {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  }
 
   return (
-    <label className="relative inline-flex cursor-pointer items-center">
-      <input
-        type="checkbox"
-        value={theme}
-        onChange={() => {
-          setTheme(theme === "dark" ? "light" : "dark");
-        }}
-        className="peer sr-only"
-      />
-      <div
-        onMouseEnter={handleOnMouseEnter}
-        onMouseLeave={handleOnMouseLeave}
-        className="peer h-6 w-11 rounded-full bg-blue-600 bg-opacity-50 after:border-dark after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border  after:bg-dark dark:after:bg-light after:transition-all after:content-[''] peer-checked:bg-blue-600  peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none   dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
-      ></div>
-      <span
-        className={
-          seeToolbar
-            ? "  absolute right-1/2 -bottom-full h-auto translate-x-1/2 translate-y-full transform items-center z-50 justify-center rounded  p-2 text-center text-white "
-            : "hidden"
-        }
-      >
-        {theme === "dark" ? "dark theme" : "light"}
-      </span>
-
-    </label>
+    <button
+      className={`flex group/theme bg-dark dark:bg-light whitespace-nowrap overflow-hidden h-10  w-10 relative    border-2 flex-row group   items-center justify-center  rounded-full border-light py-2 ${
+        opened && "border"
+      } `}
+      onClick={handleSetTheme}
+    >
+      {theme === "dark" ? (
+        <div className="flex  top-1/2 left-1/2 justify-center  transform  ease-in-out duration-1000 -translate-x-[1.2rem] group-hover/theme:-translate-x-[3.8rem] -translate-y-1/2 absolute items-center min-h-[20px] w-20  ">
+          <div className="flex  w-full justify-center">
+            <MdNightsStay className="text-light dark:text-dark" />
+          </div>
+          <div className="flex w-full justify-center ">
+            <IoSunny className="text-light dark:text-dark" />{" "}
+          </div>
+        </div>
+      ) : (
+        <div className="flex top-1/2 left-1/2 justify-center  transform  ease-in-out duration-1000 -translate-x-[1.2rem] group-hover/theme:-translate-x-[3.8rem] -translate-y-1/2 absolute items-center min-h-[20px] w-20  ">
+          <div className="flex w-full justify-center ">
+            <IoSunny className="text-light dark:text-dark" />{" "}
+          </div>
+          <div className="flex w-full justify-center">
+            <MdNightsStay className="text-light dark:text-dark" />
+          </div>
+        </div>
+      )}
+    </button>
   );
 };
 

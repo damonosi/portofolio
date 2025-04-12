@@ -20,7 +20,7 @@ export default function RootLayout({
           <Providers>
             <Header />
 
-            <main className="grid grid-cols-1 px-5 md:px-24 bg-light dark:bg-dark">
+            <main className="grid grid-cols-1 px-5 md:px-24 bg-light dark:bg-dark transition-colors duration-1000 ">
               {children}
             </main>
 
