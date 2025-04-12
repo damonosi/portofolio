@@ -2,39 +2,87 @@
 
 import useScrollDirection from "@/hooks/useScrollDirection";
 import { motion, useScroll } from "framer-motion";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { MdNightsStay } from "react-icons/md";
 import { TiThMenuOutline } from "react-icons/ti";
+import { WiDaySunny } from "react-icons/wi";
 import Logo from "../../../public/imagini/logo-no-background.svg";
 import ScrollProgress from "./ScrollProgress";
 import ThemeSwitcher from "./ThemeSwitcher";
+const Mask = ({ className }: { className?: string }) => {
+  return (
+    <div
+      id="mask"
+      className={` absolute  dark:bg-light bg-dark h-0 ease-in-out duration-1000 group-hover:h-full left-0 right-0 bottom-0 opacity-70 z-10 ${className}`}
+    ></div>
+  );
+};
+const NavigationButton = ({ link, text }: { link: string; text: string }) => {
+  return (
+    <Link
+      className="border-2 group px-4 flex relative w-full items-center justify-center overflow-hidden rounded-full border-light py-2"
+      href={link}
+    >
+      <span className="z-50 text-dark dark:text-light group-hover:dark:text-dark group-hover:text-light">
+        {text}
+      </span>
+      <Mask className="rounded-full" />
+    </Link>
+  );
+};
 
 const Navigation = () => {
   const [opened, setOpended] = useState(false);
+  const { theme, setTheme } = useTheme();
 
-  function handleOpenTheme() {
-    setOpended(!opened);
+  function handleSetTheme() {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
   }
+
   return (
     <div className=" justify-center items-center gap-5 hidden md:flex">
-      <nav className="flex gap-6 text-dark justify-center items-center">
-        <Link href="#hero-section">About</Link>
-        <Link href="#certification">Studies</Link>
-        <Link href="#work">Projects</Link>
-        <div className={`flex relative h-fit w-full ${opened && "border"} `}>
-          <button onClick={handleOpenTheme}>Select Theme</button>
-          {opened ? (
-            <div className="absolute gap-2  flex top-0 right-1/2 transform translate-y-full items-center translate-x-1/2">
-              <span className="text-lg">light</span>
-              <ThemeSwitcher />
-              <span className="text-lg">dark</span>
-            </div>
-          ) : (
-            ""
-          )}
-        </div>
+      <nav className="flex gap-6 text-dark text-xl dark:text-light justify-center items-center">
+        <NavigationButton
+          link="#hero-section"
+          text="About"
+        />
+        <NavigationButton
+          link="#certification"
+          text="Studies"
+        />
+        <NavigationButton
+          link="#work"
+          text="Projects"
+        />
       </nav>
+      <div
+        className={`flex relative h-fit w-full  group px-4  items-center justify-center overflow-hidden rounded-full border-light py-2  `}
+      >
+        <button
+          className={`flex whitespace-nowrap h-fit w-full border-2 flex-row group px-4  items-center justify-center overflow-hidden rounded-full border-light py-2 ${
+            opened && "border"
+          } `}
+          onClick={handleSetTheme}
+        >
+          {theme === "dark" ? <MdNightsStay /> : <WiDaySunny />}
+        </button>
+        {opened ? (
+          <div className="absolute gap-2  flex top-0 right-1/2 transform translate-y-full items-center translate-x-1/2">
+            <span className="text-lg">light</span>
+            <ThemeSwitcher />
+            <span className="text-lg">dark</span>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 };

@@ -37,6 +37,7 @@ const ThemeSwitcher = () => {
       >
         {theme === "dark" ? "dark theme" : "light"}
       </span>
+
     </label>
   );
 };
