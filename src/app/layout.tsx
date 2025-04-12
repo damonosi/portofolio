@@ -1,9 +1,9 @@
 import Footer from "@/components/navigation/Footer";
 import Header from "@/components/navigation/Header";
 import Providers from "@/utils/providers";
-import { Abhaya_Libre } from "next/font/google";
+import { ABeeZee } from "next/font/google";
 import "./globals.css";
-const abhsby = Abhaya_Libre({ weight: "400", subsets: ["latin"] });
+const abazee = ABeeZee({ weight: "400", subsets: ["latin"] });
 export default function RootLayout({
   children,
 }: {
@@ -16,7 +16,7 @@ export default function RootLayout({
     >
       <head />
       <body className="bg-white dark:bg-black  relative">
-        <main className={abhsby.className}>
+        <main className={abazee.className}>
           <Providers>
             <Header />
 

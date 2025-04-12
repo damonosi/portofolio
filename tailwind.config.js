@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         dark: "#07090F",
         light: "#FAFAFF",
+        portocaliu: "#FF6B35",
       },
     },
   },

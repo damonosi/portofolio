@@ -31,7 +31,7 @@ const NavigationButton = ({ link, text }: { link: string; text: string }) => {
 
 const Navigation = () => {
   return (
-    <div className=" justify-center items-center gap-5 hidden md:flex">
+    <div className=" justify-center items-center gap-5  hidden md:flex">
       <nav className="flex gap-6 text-dark text-xl dark:text-light justify-center items-center">
         <NavigationButton
           link="#hero-section"
@@ -92,7 +92,7 @@ const Header = () => {
     <>
       <ScrollProgress scrollYProgress={scrollYProgress} />
       <motion.header
-        className={`transition-all text-dark px-5 duration-700 flex justify-between  sticky top-0  dark:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] items-center md:px-24 backdrop-blur-lg w-full h-20 z-40  dark:text-light ${
+        className={`transition-all border-b-2 border-portocaliu text-dark px-5 duration-700 flex justify-between  sticky top-0   items-center md:px-24 backdrop-blur-lg w-full h-20 z-40  dark:text-light ${
           scrollDirection === "down"
             ? "-translate-y-full scale-90 opacity-0"
             : "-translate-y-0 scale-100 opacity-100"
