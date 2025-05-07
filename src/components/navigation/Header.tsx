@@ -3,6 +3,7 @@
 import useScrollDirection from "@/hooks/useScrollDirection";
 import { motion, useScroll } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { TiThMenuOutline } from "react-icons/ti";
 import ScrollProgress from "./ScrollProgress";
@@ -73,9 +74,14 @@ const MobileMenu = () => {
   );
 };
 const LogoComponent = () => {
+  const router = useRouter();
+  function handleRouteHome() {
+    router.push("/");
+  }
   return (
     <div
-      className=" flex w-56 flex-col justify-center items-center"
+      className=" flex w-56 flex-col cursor-pointer hover:scale-105 justify-center items-center"
+      onClick={handleRouteHome}
       id="logo-container"
     >
       <span className="text-lg">Portofolio Website</span>

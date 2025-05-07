@@ -14,11 +14,11 @@ export default function Home() {
       <SectionBackground className="">
         <HeroSection />
       </SectionBackground>
-      <HorizontalLine />
+
       <SectionBackground className="  ">
         <ProiecteSection />
       </SectionBackground>
-      <HorizontalLine />
+
       <SectionBackground className=" ">
         <AboutSection />
       </SectionBackground>

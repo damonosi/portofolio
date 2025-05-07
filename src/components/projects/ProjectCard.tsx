@@ -1,6 +1,7 @@
 "use client";
 import { Proiect } from "@/utils/data";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -145,48 +146,31 @@ const ProjectCard = ({
   github,
   liveLink,
 }: Proiect) => {
-  console.log(liveLink);
+  const router = useRouter();
+  function handleProjectClick() {
+    router.push(`/project/${numeProiect}`);
+  }
   return (
-    <div className="flex flex-col backdrop-brightness-200 rounded-lg p-6 pt-0 overflow-hidden group relative">
+    <div
+      onClick={handleProjectClick}
+      className="flex flex-col cursor-pointer backdrop-brightness-200 rounded-lg p-6 pt-0 overflow-hidden group relative"
+    >
       <div className="z-40">
         <CardMask />
-        <h1 className="text-2xl pt-4 h-1/5 group-hover:translate-x-1/3 transition-all ease-in-out duration-1000">
-          {numeProiect}
-        </h1>
-        <hr className="mt-2 h-1 w-1/4 group-hover:w-full transition-all ease-in-out  duration-1000 bg-portocaliu" />
-        <div className="min-h-[100px] px-2 py-12 w-full border-b-2  tracking-wide border-black pt-4 text-left ">
-          <p>{descriere}</p>
+        <div className="flex w-full justify-between py-4">
+          <h1 className="text-2xl pt-4 h-1/5 group-hover:translate-x-36 transition-all ease-in-out duration-1000">
+            {numeProiect}
+          </h1>
+          <Image
+            width={48}
+            height={48}
+            alt="javascript"
+            src={limbaj}
+          />
         </div>
-        <div
-          className="flex w-full items-center   justify-between p-6"
-          key={id}
-          id={id.toString()}
-        >
-          <div
-            className="w-1/3"
-            id="limbaj-folosit"
-          >
-            <Image
-              width={48}
-              height={48}
-              alt="javascript"
-              src={limbaj}
-            />
-          </div>
-          <div
-            className="flex w-1/3 items-center justify-between"
-            id="sectiune-technologii"
-          >
-            {technologii.map(({ link, nume }) => (
-              <TechnologiiComponent
-                key={nume}
-                link={link}
-                nume={nume}
-              />
-            ))}
-          </div>
-          <GithubWithToolbar github={github} />
-          {liveLink && <LivePreviewWithToolbar liveLink={liveLink} />}
+        <hr className="mt-2 h-1 w-1/4 group-hover:w-full transition-all ease-in-out  duration-1000 bg-portocaliu" />
+        <div className="min-h-[200px] px-2  w-full  tracking-wide  py-12 text-left ">
+          <p>{descriere}</p>
         </div>
       </div>
     </div>

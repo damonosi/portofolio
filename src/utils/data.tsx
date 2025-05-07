@@ -60,7 +60,7 @@ const getProjectsData = () => {
     },
     {
       id: 3,
-      numeProiect: "Ursitoare Events",
+      numeProiect: "UrsitoareEvents",
       limbaj: javascriptIconLink,
       technologii: [
         { link: nextjsIconLink, nume: "nextjs" },
@@ -90,15 +90,15 @@ const getProjectsData = () => {
     },
     {
       id: 5,
-      numeProiect: "Portofoliu",
+      numeProiect: "Portfoliu",
       limbaj: typescriptIconLink,
       technologii: [
         { link: nextjsIconLink, nume: "nextjs" },
         { link: reactIconLink, nume: "react" },
-        { link: mongodbIconLink, nume: "mongodb" },
       ],
       github: "https://github.com/damonosi/magazin_rose",
-      descriere: "This is my portofolio website",
+      descriere:
+        "Developed a responsive and modern portfolio website to present my work and skills in a clean, accessible format. Built using Next.js and TypeScript for optimal performance and maintainability, styled with Tailwind CSS for a sleek, utility-first design. Added smooth, dynamic animations with Framer Motion to enhance user experience. The site supports internationalization (i18n), enabling seamless language switching for a global audience. Also includes a dark mode toggle, allowing users to personalize their browsing experience.",
       imaginePreview:
         "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
     },

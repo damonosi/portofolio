@@ -2,26 +2,34 @@
 import Footer from "@/components/navigation/Footer";
 import Header from "@/components/navigation/Header";
 import Providers from "@/utils/providers";
+import { Spring } from "framer-motion";
 import { Alatsi } from "next/font/google";
 import "./globals.css";
 const abazee = Alatsi({ weight: "400", subsets: ["latin"] });
 // Alatsi
 // Inconsolata
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const transitionSpringPhysics: Spring = {
+    type: "spring",
+    mass: 0.2,
+    stiffness: 80,
+    damping: 10,
+  };
+  const transitionColor = "deepskyblue";
   return (
     <html
       lang="en"
@@ -29,7 +37,7 @@ export default function RootLayout({
     >
       <head />
       <body className="bg-white dark:bg-black  relative">
-        <main className={abazee.className}>
+        <div className={abazee.className}>
           <Providers>
             <Header />
 
@@ -40,7 +48,7 @@ export default function RootLayout({
             <Footer />
           </Providers>
           <div id="portal" />
-        </main>
+        </div>
       </body>
     </html>
   );

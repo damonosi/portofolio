@@ -14,7 +14,7 @@ export default async function Page({
   const project = filteredProjects[0];
 
   return (
-    <div>
+    <div className="min-h-screen">
       <h1>{project.numeProiect}</h1>
     </div>
   );
