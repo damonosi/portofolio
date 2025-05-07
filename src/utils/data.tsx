@@ -30,7 +30,7 @@ const getProjectsData = () => {
   const proiecte: Proiect[] = [
     {
       id: 1,
-      numeProiect: "Human Source",
+      numeProiect: "HumanSource",
       limbaj: javascriptIconLink,
       technologii: [
         { link: nextjsIconLink, nume: "nextjs" },
@@ -41,12 +41,12 @@ const getProjectsData = () => {
       imaginePreview:
         "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
       descriere:
-        "This is a website made for a company that connects workes with employers.",
+        "I created a dynamic, multilingual platform that connects employers with potential employees, streamlining the hiring process. Built with Next.js and TypeScript for fast, scalable performance, the app uses Apollo Client and GraphQL for efficient data handling and real-time updates. The UI is responsive and clean, styled with Tailwind CSS, and brought to life with Framer Motion for engaging animations. Integrated i18n to support multiple languages, enhancing accessibility for a broader user base. The platform enables job listings, applications, and profile management, delivering a seamless experience for both employers and job seekers.",
       liveLink: "https://humansource.vercel.app/",
     },
     {
       id: 2,
-      numeProiect: "Arena Residence",
+      numeProiect: "ArenaResidence",
       limbaj: javascriptIconLink,
       technologii: [
         { link: reactIconLink, nume: "react" },
@@ -56,11 +56,11 @@ const getProjectsData = () => {
       imaginePreview:
         "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
       descriere:
-        "This is a website I made for a company that sells apartments from the buildings they make",
+        "I developed a modern, interactive website for a real estate company to showcase and sell newly built apartments. The site features a custom floor plan viewer using Konva.js for canvas-based interactivity, smooth animations powered by Framer Motion, and responsive UI components styled with Styled-Components. The overall architecture is built with React, ensuring performance, scalability, and maintainability. The result is an engaging, user-friendly platform that enhances the apartment-buying experience.",
     },
     {
       id: 3,
-      numeProiect: "UrsitoareBc",
+      numeProiect: "Ursitoare Events",
       limbaj: javascriptIconLink,
       technologii: [
         { link: nextjsIconLink, nume: "nextjs" },
@@ -69,7 +69,7 @@ const getProjectsData = () => {
       ],
       github: "https://github.com/damonosi/ursitoare",
       descriere:
-        "This is a web app that I made for a company so that they can organise their bookings using Google api",
+        "Developed a custom web application for a company that organizes entertainment shows for weddings and baptisms, streamlining the event booking and management process. Built with React and TypeScript for a scalable and maintainable frontend, the platform features secure authentication via NextAuth and a MongoDB-backed backend managed with Mongoose. Integrated Google Maps for venue location visualization and route planning, while Sass was used to craft a clean, structured UI. Animations and transitions are powered by Framer Motion, enhancing user experience with smooth, modern interactions. The platform supports both clients and administrators in coordinating event logistics efficiently.",
       imaginePreview:
         "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
     },
@@ -84,7 +84,7 @@ const getProjectsData = () => {
       ],
       github: "https://github.com/damonosi/magazin_rose",
       descriere:
-        "This is a website I made for a company that sells rose products that the make",
+        "I designed and developed a full-stack e-commerce platform for a company specializing in Damask rose products. Built with Next.js and TypeScript for high performance and type safety, the site includes a secure user authentication system using NextAuth and a robust backend powered by Mongoose and MongoDB. The frontend features a clean, responsive design with Tailwind CSS, enhanced by smooth animations from Framer Motion for a refined user experience. This platform allows users to browse, purchase, and learn about premium rose-based products through an elegant and intuitive interface.",
       imaginePreview:
         "https://res.cloudinary.com/dyfedllac/image/upload/v1670150078/portofoliu/react-js-icon_bkyalh.svg",
     },

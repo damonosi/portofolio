@@ -2,9 +2,21 @@
 import Footer from "@/components/navigation/Footer";
 import Header from "@/components/navigation/Header";
 import Providers from "@/utils/providers";
-import { ABeeZee } from "next/font/google";
+import { Alatsi } from "next/font/google";
 import "./globals.css";
-const abazee = ABeeZee({ weight: "400", subsets: ["latin"] });
+const abazee = Alatsi({ weight: "400", subsets: ["latin"] });
+// Alatsi
+// Inconsolata
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 export default function RootLayout({
   children,
 }: {

@@ -5,16 +5,14 @@ import ProjectCard from "./ProjectCard";
 
 const animations = {
   inView: {
-    opacity: 1,
     x: 0,
     scale: 1,
   },
   notInView: {
-    opacity: 0,
     x: 100,
     scale: 0.5,
   },
-  tranzitie: { duration: 2 },
+  tranzitie: { duration: 0.6 },
 };
 const ProiecteSection = () => {
   const proiecte: Proiect[] = getProjectsData();
@@ -23,7 +21,7 @@ const ProiecteSection = () => {
     <section className=" flex flex-col text-center gap-6 p-6 py-12">
       <h1 className="text-5xl py-12">Some of the projects I have made</h1>{" "}
       <div
-        className="grid grid-cols-1 md:grid-cols-2  justify-center  "
+        className="grid grid-cols-1 md:grid-cols-1 gap-56  justify-center  "
         id="work"
       >
         {proiecte.map(
@@ -41,7 +39,7 @@ const ProiecteSection = () => {
               inView={animations.inView}
               notInView={animations.notInView}
               tranzitie={animations.tranzitie}
-              className="m-2  flex   flex-col  justify-center border-2 p-6 text-left ring-2 "
+              className="  flex   flex-col  justify-center   text-left  "
             >
               <ProjectCard
                 id={id}

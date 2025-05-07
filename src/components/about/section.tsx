@@ -1,3 +1,4 @@
+"use client";
 import WebCert from "../../../public/certificari/completeWeb-cert.png";
 import MERNCert from "../../../public/certificari/mern-cert.png";
 import ReactCert from "../../../public/certificari/react-cert.png";

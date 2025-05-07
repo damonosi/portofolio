@@ -32,7 +32,7 @@ const TechnologiiComponent: React.FunctionComponent<TechnologiiComponent> = ({
       id="technologie-toolbar"
     >
       <div
-        className="flex h-16 w-16  items-center justify-center p-1  ring-4"
+        className="flex h-16 w-16  items-center justify-center p-1  "
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
       >
@@ -47,7 +47,7 @@ const TechnologiiComponent: React.FunctionComponent<TechnologiiComponent> = ({
       <div
         className={
           seeToolbar
-            ? "  absolute right-1/2 bottom-0 h-auto translate-x-1/2 translate-y-full transform items-center justify-center rounded bg-black p-2 text-center text-white ring-4"
+            ? "  absolute right-1/2 bottom-0 h-auto translate-x-1/2 translate-y-full transform items-center justify-center rounded bg-black p-2 text-center text-white ring-1"
             : "hidden"
         }
       >
@@ -84,7 +84,7 @@ const GithubWithToolbar: React.FunctionComponent<GitHubToolbar> = ({
         <div
           className={
             seeToolbar
-              ? "absolute mt-4 flex h-auto w-16 items-center justify-center rounded bg-black p-2 text-center text-white ring-4"
+              ? "absolute mt-4 flex h-auto w-16 items-center justify-center rounded bg-black p-2 text-center text-white ring-1"
               : "hidden"
           }
         >
@@ -131,7 +131,11 @@ const LivePreviewWithToolbar: React.FunctionComponent<LiveLink> = ({
     </div>
   );
 };
-
+const CardMask = () => {
+  return (
+    <div className="absolute backdrop-blur-lg border-t-4 border-portocaliu group-hover:border-0  z-50 group-hover:translate-y-full transform duration-1000 transition-all left-0  bottom-0 h-4/5 right-0 "></div>
+  );
+};
 const ProjectCard = ({
   numeProiect,
   descriere,
@@ -143,42 +147,47 @@ const ProjectCard = ({
 }: Proiect) => {
   console.log(liveLink);
   return (
-    <div>
-      <h1 className="text-2xl">{numeProiect}</h1>
-      <hr className="mt-2 h-1 w-1/4 bg-black" />
-      <div className="min-h-[100px] w-full border-b-2 border-black pt-4 text-left ">
-        <p>{descriere}</p>
-      </div>
-      <div
-        className="flex w-full items-center   justify-between p-6"
-        key={id}
-        id={id.toString()}
-      >
-        <div
-          className="w-1/3"
-          id="limbaj-folosit"
-        >
-          <Image
-            width={48}
-            height={48}
-            alt="javascript"
-            src={limbaj}
-          />
+    <div className="flex flex-col backdrop-brightness-200 rounded-lg p-6 pt-0 overflow-hidden group relative">
+      <div className="z-40">
+        <CardMask />
+        <h1 className="text-2xl pt-4 h-1/5 group-hover:translate-x-1/3 transition-all ease-in-out duration-1000">
+          {numeProiect}
+        </h1>
+        <hr className="mt-2 h-1 w-1/4 group-hover:w-full transition-all ease-in-out  duration-1000 bg-portocaliu" />
+        <div className="min-h-[100px] px-2 py-12 w-full border-b-2  tracking-wide border-black pt-4 text-left ">
+          <p>{descriere}</p>
         </div>
         <div
-          className="flex w-1/3 items-center justify-between"
-          id="sectiune-technologii"
+          className="flex w-full items-center   justify-between p-6"
+          key={id}
+          id={id.toString()}
         >
-          {technologii.map(({ link, nume }) => (
-            <TechnologiiComponent
-              key={nume}
-              link={link}
-              nume={nume}
+          <div
+            className="w-1/3"
+            id="limbaj-folosit"
+          >
+            <Image
+              width={48}
+              height={48}
+              alt="javascript"
+              src={limbaj}
             />
-          ))}
+          </div>
+          <div
+            className="flex w-1/3 items-center justify-between"
+            id="sectiune-technologii"
+          >
+            {technologii.map(({ link, nume }) => (
+              <TechnologiiComponent
+                key={nume}
+                link={link}
+                nume={nume}
+              />
+            ))}
+          </div>
+          <GithubWithToolbar github={github} />
+          {liveLink && <LivePreviewWithToolbar liveLink={liveLink} />}
         </div>
-        <GithubWithToolbar github={github} />
-        {liveLink && <LivePreviewWithToolbar liveLink={liveLink} />}
       </div>
     </div>
   );

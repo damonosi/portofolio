@@ -1,22 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import { ABeeZee } from "next/font/google";
-const abazee = ABeeZee({ weight: "400", subsets: ["latin"] });
-const HeroSection = () => {
-  const container = {
-    hidden: { opacity: 0 },
+
+const MotionHr = ({ className }: { className?: string }) => {
+  const hrAnimation = {
+    hidden: { top: 0, opacity: 0 },
     show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.8,
-      },
-    },
-  };
-  const item = {
-    hidden: { x: "-100%", scale: 0, opacity: 0 },
-    show: {
-      x: 0,
-      scale: 1,
+      top: "100%",
       opacity: 1,
       transition: {
         duration: 2,
@@ -24,46 +13,104 @@ const HeroSection = () => {
     },
   };
   return (
+    <motion.hr
+      variants={hrAnimation}
+      initial="hidden"
+      animate="show"
+      className={`w-1/3 h-1 absolute bg-portocaliu border-portocaliu rounded-full ${className} `}
+    />
+  );
+};
+const HeroMask = () => {
+  const maskVariants = {
+    offscreen: { opacity: 0, y: "-50%", x: 1000 },
+    onscreen: {
+      x: "30%",
+      y: "-50%",
+      opacity: 1,
+      transition: {
+        duration: 2.5,
+      },
+    },
+  };
+  return (
+    <motion.span
+      whileInView="onscreen"
+      initial="offscreen"
+      variants={maskVariants}
+      className="absolute top-0 right-0 w-full h-full bg-portocaliu rounded-full "
+    ></motion.span>
+  );
+};
+const HeroSection = () => {
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 1,
+        delayChildren: 0.4,
+      },
+    },
+  };
+
+  const textAnimation = {
+    hidden: { opacity: 0 },
+    show: {
+      oyiginY: 0,
+      opacity: 1,
+
+      transition: { duration: 2 },
+    },
+  };
+
+  return (
     <section
-      className={`relative items-start md:items-center md:justify-center   flex mt-[80px] md:mt-0 min-h-[calc(100vh-80px)] py-16 md:py-6 w-full ${abazee.className}`}
+      className={`relative overflow-hidden items-start md:items-center md:justify-center   flex mt-[80px] md:mt-0 min-h-[calc(100vh-80px)] py-16 md:py-6 w-full `}
       id="hero-section"
     >
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex flex-col w-full text-center h-full gap-20 font-bold  text-2xl justify-center"
+        className="flex flex-col w-full re text-center h-full gap-20 font-bold  text-2xl justify-center"
       >
-        <div>
+        <HeroMask />
+        <motion.div
+          variants={container}
+          className="flex relative"
+        >
+          <MotionHr className="w-1/4" />
           <motion.h2
-            className="text-9xl text-start"
-            variants={item}
+            variants={textAnimation}
+            className="text-9xl  text-start "
           >
-            Hell<span className="text-7xl">[o]</span>
-            <hr className="w-1/3 h-2 bg-portocaliu border-portocaliu" />
+            Hello,
           </motion.h2>
-        </div>
-        <div>
-          {" "}
+        </motion.div>
+
+        <motion.div className="flex relative">
+          <MotionHr className="lg:w-1/4" />
           <motion.h1
             className="text-4xl text-start"
-            variants={item}
+            variants={textAnimation}
           >
-            My name is Andrei ,
-            <hr className="w-80 h-2 bg-portocaliu border-portocaliu" />
+            My name is Andrei
           </motion.h1>{" "}
-        </div>
-        <motion.span
-          className="text-end   w-fit  ml-auto leading-loose"
-          variants={item}
-        >
-          I am a passionate web developer that <br /> is specialised in
-          front-end web development
-          <hr className="w-full h-2 bg-portocaliu border-portocaliu mt-2" />
-        </motion.span>
+        </motion.div>
+        <motion.div className="flex relative text-end   w-fit  ml-auto">
+          <MotionHr className="w-full" />
+          <motion.span
+            className="text-lg leading-loose mr-2"
+            variants={textAnimation}
+          >
+            I am a passionate web developer that <br /> is specialised in
+            front-end web development .
+          </motion.span>
+        </motion.div>
       </motion.div>
     </section>
   );
 };
 
 export default HeroSection;
+
