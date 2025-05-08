@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { RxDoubleArrowRight } from "react-icons/rx";
 type GitHubToolbar = {
   github: string;
 };
@@ -152,10 +153,7 @@ const ProjectCard = ({
     router.push(`/project/${numeProiect}`);
   }
   return (
-    <div
-      onClick={handleProjectClick}
-      className="flex flex-col cursor-pointer backdrop-brightness-200 rounded-lg p-6 pt-0 overflow-hidden group relative"
-    >
+    <div className="flex flex-col  backdrop-brightness-200 rounded-lg p-6 pt-0 overflow-hidden group relative">
       <div className="z-40">
         <CardMask />
         <div className="flex w-full justify-between py-4">
@@ -172,6 +170,15 @@ const ProjectCard = ({
         <hr className="mt-2 h-1 w-1/4 group-hover:w-full transition-all ease-in-out  duration-1000 bg-portocaliu" />
         <div className="min-h-[200px] px-2  w-full  tracking-wide  py-12 text-left ">
           <p>{descriere}</p>
+        </div>
+        <div className="flex w-full justify-center">
+          <button
+            className="group/button cursor-pointer border-2 flex items-center  gap-4 rounded  text-2xl border-portocaliu  py-2 px-4"
+            onClick={handleProjectClick}
+          >
+            See More About The Project{" "}
+            <RxDoubleArrowRight className="group-hover/button:translate-x-1 transition-transform duration-200 text-portocaliu" />
+          </button>
         </div>
       </div>
     </div>

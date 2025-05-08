@@ -14,12 +14,12 @@ export default async function Page({
     return <div>No Project Page</div>;
   }
   return (
-    <div className="min-h-screen flex flex-col gap-12  items-center w-full py-8 ">
+    <div className="min-h-screen flex flex-col   items-center w-full py-8 ">
       <h1 className="text-8xl py-16">{proiect.numeProiect}</h1>
-      <div className="border-4 rounded-full p-8 bg-white backdrop-blur-xl rounded-b-md px-32">
+      <div className="border-4 rounded-full flex justify-center text-center border-b-0 p-8 bg-white backdrop-blur-xl border-portocaliu rounded-b-md px-32">
         <span className="text-xl  ">{proiect.descriere}</span>
       </div>
-      <div className="border-2 transition-all hover:rounded-sm  duration-1000 ease-in-out rounded-t-md rounded-full overflow-hidden">
+      <div className=" transition-all hover:rounded-sm border-portocaliu border-4 border-t-0 duration-500 ease-in-out rounded-t-md rounded-full  overflow-hidden">
         <Image
           alt="Landing page PrintScreen"
           src={proiect.imaginePreview}

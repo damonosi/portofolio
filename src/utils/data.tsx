@@ -1,6 +1,8 @@
 import { StaticImageData } from "next/image";
 import ArenaLanding from "../../public/imagini/arena-landing-page.png";
 import HumanSourceLanding from "../../public/imagini/human-landing-page.png";
+import PortfolioLanding from "../../public/imagini/portofolio-landing.png";
+import RoseLanding from "../../public/imagini/rose-landing.png";
 
 let typescriptIconLink =
   "https://res.cloudinary.com/dyfedllac/image/upload/v1670148438/portofoliu/typescript_lulfxa.svg";
@@ -87,7 +89,7 @@ const getProjectsData = () => {
       github: "https://github.com/damonosi/magazin_rose",
       descriere:
         "I designed and developed a full-stack e-commerce platform for a company specializing in Damask rose products. Built with Next.js and TypeScript for high performance and type safety, the site includes a secure user authentication system using NextAuth and a robust backend powered by Mongoose and MongoDB. The frontend features a clean, responsive design with Tailwind CSS, enhanced by smooth animations from Framer Motion for a refined user experience. This platform allows users to browse, purchase, and learn about premium rose-based products through an elegant and intuitive interface.",
-      imaginePreview: HumanSourceLanding,
+      imaginePreview: RoseLanding,
     },
     {
       id: 5,
@@ -100,7 +102,7 @@ const getProjectsData = () => {
       github: "https://github.com/damonosi/magazin_rose",
       descriere:
         "Developed a responsive and modern portfolio website to present my work and skills in a clean, accessible format. Built using Next.js and TypeScript for optimal performance and maintainability, styled with Tailwind CSS for a sleek, utility-first design. Added smooth, dynamic animations with Framer Motion to enhance user experience. The site supports internationalization (i18n), enabling seamless language switching for a global audience. Also includes a dark mode toggle, allowing users to personalize their browsing experience.",
-      imaginePreview: HumanSourceLanding,
+      imaginePreview: PortfolioLanding,
     },
   ];
   return proiecte;
