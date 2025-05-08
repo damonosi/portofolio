@@ -144,6 +144,7 @@ const ProjectCard = ({
   limbaj,
   technologii,
   github,
+  imaginePreview,
   liveLink,
 }: Proiect) => {
   const router = useRouter();

@@ -33,6 +33,7 @@ const ProiecteSection = () => {
             github,
             descriere,
             liveLink,
+            imaginePreview,
           }) => (
             <InViewWrapper
               key={id}
@@ -45,6 +46,7 @@ const ProiecteSection = () => {
                 id={id}
                 limbaj={limbaj}
                 technologii={technologii}
+                imaginePreview={imaginePreview}
                 numeProiect={numeProiect}
                 liveLink={liveLink}
                 github={github}
