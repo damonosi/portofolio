@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com"],
   },
+
   webpack: function (config, options) {
     config.module.rules.push({
       test: /\.(mp4|mp3|ogv|oga|webm)$/i,

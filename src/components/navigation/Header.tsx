@@ -63,7 +63,7 @@ const MobileMenu = () => {
       {openedMenu && (
         <div className="absolute bottom-0 w-full left-0  right-0  justify-center items-center gap-5 top-full">
           <nav className="flex gap-6  shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f]  backdrop-blur-3xl justify-between px-5 py-5 items-center">
-            <Link href="#hero-section">About</Link>
+            <Link href={`${"/"} #hero-section`}>About</Link>
             <Link href="#certification">Studies</Link>
             <Link href="#work">Projects</Link>
             <ThemeSwitcher />
