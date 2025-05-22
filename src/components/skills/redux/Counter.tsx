@@ -37,7 +37,7 @@ const ReduxCounter = () => {
           +
         </button>
         <button
-          className="flex flex-col"
+          className="flex flex-col w-36"
           onClick={() => dispatch(reset())}
         >
           <span className="text-4xl gap-12 px-6 py-4 ">{count}</span>
@@ -90,6 +90,30 @@ const ReduxCounter = () => {
             Decrement by {decrementAmount}
           </button>
         </div>
+      </div>
+
+      <div className="flex flex-col gap-4 mt-12 pr-24">
+        <span>
+          This is a simple counter component built with Redux Toolkit for state
+          management. It allows users to increment or decrement a numeric value
+          in two ways:
+        </span>
+        <ul className="gap-2 list-decimal ">
+          <li>
+            Basic Increment/Decrement: Use the "+" and "−" buttons to increase
+            or decrease the counter by 1.
+          </li>
+          <li>
+            Custom Amount Adjustment: Enter a number in the input field and use
+            the respective "increment" or "decrement" buttons to increment or
+            decrement the counter by the user-defined amount.
+          </li>
+        </ul>
+        <span>
+          {" "}
+          The component is connected to a Redux store slice that manages the
+          counter state, ensuring predictable state updates and easy debugging.
+        </span>
       </div>
     </div>
   );

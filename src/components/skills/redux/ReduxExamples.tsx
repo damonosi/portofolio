@@ -9,7 +9,7 @@ const ReduxExamples = () => {
       <span className="text-4xl border-b-2 border-portocaliu w-fit">
         Redux toolkit
       </span>
-      <div className="grid grid-cols-2 w-full gap-6 ">
+      <div className="grid grid-cols-1 w-full gap-6 ">
         <ReduxCounter />
         <div>2</div>
         <div>3</div>

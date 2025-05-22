@@ -1,8 +1,8 @@
 "use client";
 // component to animate when it is in view
 
-import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { MotionDiv } from "./MotionComponents";
 
 interface IView {
   children: React.ReactNode;
@@ -20,12 +20,12 @@ const InViewWrapper = ({
   notInView,
   className,
   tranzitie,
-  delay
+  delay,
 }: IView) => {
   const [isInView, setIsInView] = useState(false);
 
   return (
-    <motion.div
+    <MotionDiv
       initial={false}
       // animated si not animated le adaugam in props ca
       animate={isInView ? inView : notInView}
@@ -42,7 +42,7 @@ const InViewWrapper = ({
       className={`${className}`}
     >
       {children}
-    </motion.div>
+    </MotionDiv>
   );
 };
 

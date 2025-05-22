@@ -1,7 +1,8 @@
 "use client";
 
 import useScrollDirection from "@/hooks/useScrollDirection";
-import { motion, useScroll } from "framer-motion";
+import { MotionDiv } from "@/utils/MotionComponents";
+import { useScroll } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -97,7 +98,7 @@ const Header = () => {
   return (
     <>
       <ScrollProgress scrollYProgress={scrollYProgress} />
-      <motion.header
+      <MotionDiv
         className={`transition-all border-b-2 border-portocaliu text-dark px-5 duration-700 flex justify-between  sticky top-0   items-center md:px-24 backdrop-blur-lg w-full h-20 z-40  dark:text-light ${
           scrollDirection === "down"
             ? "-translate-y-full scale-90 opacity-0"
@@ -107,7 +108,7 @@ const Header = () => {
         <LogoComponent />
         <Navigation />
         <MobileMenu />
-      </motion.header>
+      </MotionDiv>
     </>
   );
 };

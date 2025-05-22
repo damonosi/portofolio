@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/utils/MotionComponents";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import ImageModal from "./ImageModal";
@@ -19,11 +19,11 @@ const CourseCard = ({
     setOpenModal(true);
   };
   return (
-    <motion.div
+    <MotionDiv
+      className="flex items-center justify-center "
       whileHover={{
         y: [0, 0],
       }}
-      className="flex items-center justify-center "
       animate={{
         y: [0, 20],
         transition: {
@@ -49,7 +49,7 @@ const CourseCard = ({
         alt={alt}
         src={src}
       />
-    </motion.div>
+    </MotionDiv>
   );
 };
 
