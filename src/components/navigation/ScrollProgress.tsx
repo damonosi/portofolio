@@ -1,5 +1,6 @@
 "use client";
-import { MotionValue, motion, useSpring } from "framer-motion";
+import { MotionDiv } from "@/utils/MotionComponents";
+import { MotionValue, useSpring } from "framer-motion";
 const ScrollProgress = ({
   scrollYProgress,
 }: {
@@ -11,7 +12,7 @@ const ScrollProgress = ({
     restDelta: 0.001,
   });
   return (
-    <motion.div
+    <MotionDiv
       className="fixed top-0 right-0 left-0 h-1 bg-red-600 origin-left z-50"
       style={{ scaleX: scaleX }}
     />
